@@ -1,24 +1,17 @@
-﻿BankAccount account = new BankAccount();
-
-account.Owner = "Shady";
-account.Deposit(1000);
-account.Withdraw(200);
-
-account.ShowBalance();
-account.ShowAccountType();
-
-SavingsAccount savingsAccount = new SavingsAccount();
+﻿Account savingsAccount = new SavingsAccount();
 
 savingsAccount.Owner = "Shady";
-savingsAccount.Deposit(500);
+savingsAccount.Deposit(1000);
+savingsAccount.Withdraw(200);
 
 savingsAccount.ShowBalance();
 savingsAccount.ShowAccountType();
 
-CurrentAccount currentAccount = new CurrentAccount();
+
+Account currentAccount = new CurrentAccount();
 
 currentAccount.Owner = "Shady";
-currentAccount.Deposit(300);
+currentAccount.Deposit(500);
 
 currentAccount.ShowBalance();
 currentAccount.ShowAccountType();

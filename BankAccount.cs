@@ -1,4 +1,4 @@
-public class BankAccount
+public abstract class Account
 {
     public string Owner { get; set; } = "";
 
@@ -21,27 +21,22 @@ public class BankAccount
         Console.WriteLine($"Balance: {balance}");
     }
 
-    // This method can be changed by subclasses.
-    public virtual void ShowAccountType()
-    {
-        Console.WriteLine("This is a bank account.");
-    }
+    // Every account type must define its own account type.
+    public abstract void ShowAccountType();
 }
 
-// SavingsAccount inherits from BankAccount.
-public class SavingsAccount : BankAccount
+// SavingsAccount inherits from the abstract Account class.
+public class SavingsAccount : Account
 {
-    // Override changes the behavior of the inherited method.
     public override void ShowAccountType()
     {
         Console.WriteLine("This is a savings account.");
     }
 }
 
-// CurrentAccount also inherits from BankAccount.
-public class CurrentAccount : BankAccount
+// CurrentAccount also inherits from the abstract Account class.
+public class CurrentAccount : Account
 {
-    // Override gives this class its own behavior.
     public override void ShowAccountType()
     {
         Console.WriteLine("This is a current account.");
